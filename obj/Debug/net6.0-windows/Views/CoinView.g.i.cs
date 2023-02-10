@@ -53,7 +53,7 @@ namespace Test_Task_WPF.Views {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/Test_Task_WPF;component/views/coinview.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/Test_Task_WPF;V1.0.0.0;component/views/coinview.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\..\Views\CoinView.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

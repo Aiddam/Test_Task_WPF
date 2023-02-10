@@ -21,9 +21,9 @@ namespace Test_Task_WPF
     /// </summary>
     public partial class MainWindow : Window
     {
+       
         public MainWindow()
         {
-            DataContext = new MainViewModel();
             InitializeComponent();
         }
     }

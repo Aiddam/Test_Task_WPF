@@ -13,5 +13,11 @@ namespace Test_Task_WPF.Models
         private Item _item;
 
         public Item Item { get => _item; set => _item = value; }
+
+        public Coin(Item item)
+        {
+            _item = item;
+
+        }
     }
 }

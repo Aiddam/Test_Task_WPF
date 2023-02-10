@@ -22,7 +22,9 @@
             <Button Grid.Column="1" Content="IDK" Margin="10 0 0 0"></Button>
         </Grid>
 
-        <ListView Grid.Row="1" Margin=" 0 25 0 0" >
+        <ListView Grid.Row="1" Margin=" 0 25 0 0" ItemsSource="{Binding Items}">
+            <ListViewItem/>
+            <ListViewItem/>
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
@@ -33,7 +35,7 @@
                     <GridViewColumn Header="Image" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <Image HorizontalAlignment="Center" >
+                                <Image HorizontalAlignment="Center" Source="{Binding Small}">
 
                                 </Image>
                             </DataTemplate>
@@ -43,8 +45,8 @@
                     <GridViewColumn Header="Id" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock  Padding="0 0 20 0">
-
+                                <TextBlock  Padding="0 0 20 0" Text="{Binding Id}">
+                                    
                                 </TextBlock>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>

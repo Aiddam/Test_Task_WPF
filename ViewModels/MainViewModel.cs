@@ -14,5 +14,10 @@ namespace Test_Task_WPF.ViewModels
         {
             OnPropertyChanged(nameof(CurrentViewModel));
         }
+
+        public MainViewModel()
+        {
+            CurrentViewModel = new CoinListingViewModel();
+        }
     }
 }
