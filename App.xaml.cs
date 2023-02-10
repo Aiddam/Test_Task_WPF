@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Test_Task_WPF.ViewModels;
 
 namespace Test_Task_WPF
 {
@@ -13,5 +14,13 @@ namespace Test_Task_WPF
     /// </summary>
     public partial class App : Application
     {
+        protected override void OnStartup(StartupEventArgs e)
+        {
+            
+            
+
+            base.OnStartup(e);
+        }
     }
+
 }

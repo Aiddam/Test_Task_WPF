@@ -12,18 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using Test_Task_WPF.ViewModels;
 
-namespace Test_Task_WPF
+namespace Test_Task_WPF.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Логика взаимодействия для CoinsListingView.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CoinsListingView : UserControl
     {
-        public MainWindow()
+        public CoinsListingView()
         {
-            DataContext = new MainViewModel();
             InitializeComponent();
         }
     }
