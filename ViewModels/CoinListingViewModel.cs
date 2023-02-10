@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Test_Task_WPF.Models;
+using Test_Task_WPF.Services;
 using Test_Task_WPF.Views;
 
 namespace Test_Task_WPF.ViewModels
@@ -14,14 +15,22 @@ namespace Test_Task_WPF.ViewModels
     {
         private readonly Coin _coin;
         private readonly ObservableCollection<ItemViewModel> _items;
+        public ICommand DetailedViewCommand { get; }
         public IEnumerable<ItemViewModel> Items => _items;
 
-        public CoinListingViewModel()
+        public CoinListingViewModel(Coin coin, NavigationService navigationService)
         {
+            _coin = coin;
             _items = new ObservableCollection<ItemViewModel>();
+
+            UpdateCoins();
+        }
+
+        private void UpdateCoins()
+        {
             _items.Clear();
-            _items.Add(new ItemViewModel(new Coin(new Item(){ Id = "s" })));
-            _items.Add(new ItemViewModel(new Coin(new Item() { Id = "ssss" })));
+            ItemViewModel itemViewModel = new ItemViewModel(_coin);
+            _items.Add(itemViewModel);
         }
     }
 }

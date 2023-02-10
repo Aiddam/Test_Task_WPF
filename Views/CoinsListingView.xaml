@@ -23,8 +23,6 @@
         </Grid>
 
         <ListView Grid.Row="1" Margin=" 0 25 0 0" ItemsSource="{Binding Items}">
-            <ListViewItem/>
-            <ListViewItem/>
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>

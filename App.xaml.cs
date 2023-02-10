@@ -5,6 +5,9 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Test_Task_WPF.Models;
+using Test_Task_WPF.Services;
+using Test_Task_WPF.Stores;
 using Test_Task_WPF.ViewModels;
 
 namespace Test_Task_WPF
@@ -14,15 +17,33 @@ namespace Test_Task_WPF
     /// </summary>
     public partial class App : Application
     {
+
+        private readonly Coin _coin;
+        private readonly NavigationStore _navigationStore;
+
+        public App()
+        {
+            _coin = new Coin(new Item() { Id="sss"});
+            _navigationStore = new NavigationStore();
+        }
         protected override void OnStartup(StartupEventArgs e)
         {
-
+            _navigationStore.CurrentViewModel = CreateCoinListingViewModel();
             MainWindow = new MainWindow()
             {
-                DataContext = new MainViewModel()
+                DataContext = new MainViewModel(_navigationStore)
             };
             MainWindow.Show();
             base.OnStartup(e);
+        }
+
+        private CurrenciesViewModel CreateCurrenciesViewModel()
+        {
+            return new CurrenciesViewModel(new NavigationService(_navigationStore, CreateCoinListingViewModel));
+        }
+        private CoinListingViewModel CreateCoinListingViewModel()
+        {
+            return new CoinListingViewModel(_coin, new NavigationService(_navigationStore, CreateCurrenciesViewModel));
         }
     }
 
