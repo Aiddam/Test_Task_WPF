@@ -18,12 +18,12 @@ namespace Test_Task_WPF
     public partial class App : Application
     {
 
-        private readonly Coin _coin;
+        private readonly List<Coin> _coin;
         private readonly NavigationStore _navigationStore;
 
         public App()
         {
-            _coin = new Coin(new Item() { Id="sss"});
+            _coin = new List<Coin>();
             _navigationStore = new NavigationStore();
         }
         protected override void OnStartup(StartupEventArgs e)
@@ -37,9 +37,9 @@ namespace Test_Task_WPF
             base.OnStartup(e);
         }
 
-        private CurrenciesViewModel CreateCurrenciesViewModel()
+        private DetailViewModel CreateCurrenciesViewModel()
         {
-            return new CurrenciesViewModel(new NavigationService(_navigationStore, CreateCoinListingViewModel));
+            return new DetailViewModel(new Item() { Id="gggg"},new NavigationService(_navigationStore, CreateCoinListingViewModel));
         }
         private CoinListingViewModel CreateCoinListingViewModel()
         {

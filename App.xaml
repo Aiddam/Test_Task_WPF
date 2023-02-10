@@ -15,5 +15,10 @@
         <Style TargetType="TextBlock" x:Key="Header">
             <Setter Property="FontSize" Value="24"></Setter>
         </Style>
+        <Style TargetType="ListBox" x:Key="List">
+            <Setter  Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="ItemsControl.FontSize" Value="15"/>
+            <Setter Property="ItemsControl.Margin" Value="0 25 0 0"></Setter>
+        </Style>
     </Application.Resources>
 </Application>

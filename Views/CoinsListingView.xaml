@@ -18,14 +18,14 @@
                 <ColumnDefinition Width="auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column="0" Text="View Reservation" Style="{StaticResource Header}"></TextBlock>
+            <TextBlock Grid.Column="0" Text="Top 7 Coins" Style="{StaticResource Header}"></TextBlock>
             <Button Grid.Column="1" Content="IDK" Margin="10 0 0 0" Command="{Binding DetailedViewCommand}"></Button>
         </Grid>
 
-        <ListView Grid.Row="1" Margin=" 0 25 0 0" ItemsSource="{Binding Items}">
+        <ListView Grid.Row="1" Style="{StaticResource List}" ItemsSource="{Binding Items}" SelectedValue="{Binding Id}" >
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
-                    <Setter Property="HorizontalContentAlignment" Value="Stretch"></Setter>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
                 </Style>
             </ListView.ItemContainerStyle>
             <ListView.View>
@@ -40,30 +40,31 @@
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <GridViewColumn Header="Id" >
+                    <GridViewColumn Header="Name" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock  Padding="0 0 20 0" Text="{Binding Id}">
+                                <TextBlock  Padding="0 0 20 0" Text="{Binding Name}">
                                     
                                 </TextBlock>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
+                    
                     <GridViewColumn Header="Market Cap Rank" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock  Padding="0 0 20 0">
+                                <TextBlock Text="{Binding Market_Cap_Rank}" Padding="0 0 20 0">
 
                                 </TextBlock>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
 
-                    <GridViewColumn Header="Name" >
+                    <GridViewColumn Header="Price BTC" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock  Padding="0 0 20 0">
+                                <TextBlock Text="{Binding Price_Btc}" Padding="0 0 20 0">
 
                                 </TextBlock>
                             </DataTemplate>

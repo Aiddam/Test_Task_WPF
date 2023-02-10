@@ -14,24 +14,40 @@ namespace Test_Task_WPF.ViewModels
 {
     class CoinListingViewModel :ViewModelBase
     {
-        private readonly Coin _coin;
+        private readonly IEnumerable<Coin> _coin;
+        private Item _item;
+        public Item Item
+        {
+            get { return _item; }
+            set { _item = value; OnPropertyChanged(nameof(Item));}
+        }
         private readonly ObservableCollection<ItemViewModel> _items;
         public ICommand DetailedViewCommand { get; }
         public IEnumerable<ItemViewModel> Items => _items;
 
-        public CoinListingViewModel(Coin coin, NavigationService navigationService)
+        public CoinListingViewModel(IEnumerable<Coin> coin, NavigationService navigationService)
         {
+            HttpRequestService httpRequestService = new HttpRequestService();
+            coin = httpRequestService.GetTopCoins();
             _coin = coin;
             _items = new ObservableCollection<ItemViewModel>();
-            DetailedViewCommand = new NavigateCommand(navigationService);
+            DetailedViewCommand = new NavigateCommand(_item,navigationService);
             UpdateCoins();
         }
 
         private void UpdateCoins()
         {
+           
             _items.Clear();
-            ItemViewModel itemViewModel = new ItemViewModel(_coin);
-            _items.Add(itemViewModel);
+            if (_coin == null)
+                return;
+            foreach (var item in _coin)
+            {
+
+                ItemViewModel itemViewModel = new ItemViewModel(item);
+                _items.Add(itemViewModel);
+            }
+
         }
     }
 }

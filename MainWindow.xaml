@@ -13,7 +13,7 @@
             <DataTemplate DataType="{x:Type vms:CoinListingViewModel}">
                 <views:CoinsListingView></views:CoinsListingView>
             </DataTemplate>
-            <DataTemplate DataType="{x:Type vms:CurrenciesViewModel}">
+            <DataTemplate DataType="{x:Type vms:DetailViewModel}">
                 <views:CoinView></views:CoinView>
             </DataTemplate>
         </Grid.Resources>

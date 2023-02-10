@@ -18,17 +18,18 @@
             <RowDefinition></RowDefinition>
         </Grid.RowDefinitions>
         <Image Grid.Column="1" Grid.Row="0"></Image>
-        <Grid Grid.Row="1" Grid.ColumnSpan="3" >
+        <Grid Grid.Row="1" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition></ColumnDefinition>
                 <ColumnDefinition></ColumnDefinition>
             </Grid.ColumnDefinitions>
-            <StackPanel Grid.Column="0"  HorizontalAlignment="Right">
+            <StackPanel Grid.Column="0"  HorizontalAlignment="Right" >
                 <TextBlock Text="Name: "></TextBlock>
                 <TextBlock Text="Currency: "></TextBlock>
             </StackPanel>
+            
             <StackPanel Grid.Column="1" HorizontalAlignment="Left">
-                <TextBlock Text="Future content"></TextBlock>
+                <TextBlock  Text="{Binding Id}"></TextBlock>
                 <TextBlock Text="Future Contnebt"></TextBlock>
             </StackPanel>
         </Grid>

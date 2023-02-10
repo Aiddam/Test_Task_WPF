@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Test_Task_WPF.Models;
 using Test_Task_WPF.Stores;
 using Test_Task_WPF.ViewModels;
 
