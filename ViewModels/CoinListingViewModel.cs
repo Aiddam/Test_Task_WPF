@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Test_Task_WPF.Commands;
 using Test_Task_WPF.Models;
 using Test_Task_WPF.Services;
 using Test_Task_WPF.Views;
@@ -22,7 +23,7 @@ namespace Test_Task_WPF.ViewModels
         {
             _coin = coin;
             _items = new ObservableCollection<ItemViewModel>();
-
+            DetailedViewCommand = new NavigateCommand(navigationService);
             UpdateCoins();
         }
 

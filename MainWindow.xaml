@@ -9,7 +9,16 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid Margin="20 10" MaxWidth="600">
-        <views:CoinsListingView DataContext="{Binding CurrentViewModel}"></views:CoinsListingView>
+        <Grid.Resources>
+            <DataTemplate DataType="{x:Type vms:CoinListingViewModel}">
+                <views:CoinsListingView></views:CoinsListingView>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vms:CurrenciesViewModel}">
+                <views:CoinView></views:CoinView>
+            </DataTemplate>
+        </Grid.Resources>
+
+        <ContentControl Content="{Binding CurrentViewModel}"></ContentControl>
 
     </Grid>
 </Window>
