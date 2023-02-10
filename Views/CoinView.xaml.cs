@@ -18,7 +18,7 @@ namespace Test_Task_WPF.Views
     /// <summary>
     /// Логика взаимодействия для CoinView.xaml
     /// </summary>
-    public partial class CoinView : Page
+    public partial class CoinView : UserControl
     {
         public CoinView()
         {

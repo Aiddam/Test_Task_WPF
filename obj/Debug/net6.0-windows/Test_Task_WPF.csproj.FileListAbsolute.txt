@@ -23,3 +23,5 @@ D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Test_Task_WPF.pdb
 D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Test_Task_WPF.genruntimeconfig.cache
 D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\ref\Test_Task_WPF.dll
 D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\GeneratedInternalTypeHelper.g.cs
+D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Views\CoinView.g.cs
+D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Views\CoinView.baml
