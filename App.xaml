@@ -20,5 +20,11 @@
             <Setter Property="ItemsControl.FontSize" Value="15"/>
             <Setter Property="ItemsControl.Margin" Value="0 25 0 0"></Setter>
         </Style>
+
+        <Style x:Key="MenuButtonStyle" TargetType="{x:Type Button}">
+            <Setter Property="Height" Value="90"/>
+            <Setter Property="Background" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+        </Style>
     </Application.Resources>
 </Application>

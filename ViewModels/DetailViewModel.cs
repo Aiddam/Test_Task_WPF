@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,12 +9,17 @@ using Test_Task_WPF.Services;
 
 namespace Test_Task_WPF.ViewModels
 {
-    class DetailViewModel:ViewModelBase
+   public class DetailViewModel:ViewModelBase
     {
-        private readonly Item _item;
-        public DetailViewModel(Item item,NavigationService navigationService)
+        private ItemViewModel _item;
+        public  ItemViewModel Item
         {
-            _item = item;
+            get {  return _item;  }
+            set { _item = value; OnPropertyChanged("Item"); }
+        }
+        public DetailViewModel(NavigationService navigationService)
+        {
+            Item = StoreValueService.Item;
         }
     }
 }

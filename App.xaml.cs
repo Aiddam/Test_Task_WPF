@@ -18,7 +18,7 @@ namespace Test_Task_WPF
     public partial class App : Application
     {
 
-        private readonly List<Coin> _coin;
+        private  IEnumerable<Coin> _coin;
         private readonly NavigationStore _navigationStore;
 
         public App()
@@ -39,12 +39,14 @@ namespace Test_Task_WPF
 
         private DetailViewModel CreateCurrenciesViewModel()
         {
-            return new DetailViewModel(new Item() { Id="gggg"},new NavigationService(_navigationStore, CreateCoinListingViewModel));
+            return new DetailViewModel(new NavigationService(_navigationStore, CreateCoinListingViewModel));
         }
         private CoinListingViewModel CreateCoinListingViewModel()
         {
-            return new CoinListingViewModel(_coin, new NavigationService(_navigationStore, CreateCurrenciesViewModel));
+            return new CoinListingViewModel( ref _coin, new NavigationService(_navigationStore, CreateCurrenciesViewModel));
         }
+
+
     }
 
 }

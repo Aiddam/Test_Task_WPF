@@ -8,14 +8,12 @@ using Test_Task_WPF.Services;
 
 namespace Test_Task_WPF.Commands
 {
-    class NavigateCommand :CommandBase
+    public class NavigateCommand :CommandBase
     {
-        private readonly Item _item;
         private readonly NavigationService _navigationService;
 
-        public NavigateCommand(Item item,NavigationService navigationService)
+        public NavigateCommand(NavigationService navigationService)
         {
-            _item = item;
             _navigationService = navigationService;
         }
 

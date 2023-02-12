@@ -27,3 +27,7 @@ D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Views\CoinView.g.cs
 D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Views\CoinView.baml
 D:\c#\Test_Task_WPF\bin\Debug\net6.0-windows\Newtonsoft.Json.dll
 D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Test_Task_WPF.csproj.CopyComplete
+D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Test_Task_WPF.Properties.Resources.resources
+D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Test_Task_WPF.csproj.GenerateResource.cache
+D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Views\InterfaceMenu.g.cs
+D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Views\InterfaceMenu.baml

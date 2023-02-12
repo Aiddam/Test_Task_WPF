@@ -11,30 +11,35 @@
             <RowDefinition Height="auto"></RowDefinition>
             <RowDefinition Height="auto"></RowDefinition>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
-        <Grid Grid.Row="0">
+        
+        <Grid Grid.Row="0" Grid.Column="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"></ColumnDefinition>
                 <ColumnDefinition Width="auto"></ColumnDefinition>
             </Grid.ColumnDefinitions>
 
-            <TextBlock Grid.Column="0" Text="Top 7 Coins" Style="{StaticResource Header}"></TextBlock>
-            <Button Grid.Column="1" Content="IDK" Margin="10 0 0 0" Command="{Binding DetailedViewCommand}"></Button>
+            <TextBlock Grid.Column="0" HorizontalAlignment="Center" Text="Top 7 Coins" Style="{StaticResource Header}"></TextBlock>
+            
         </Grid>
-
-        <ListView Grid.Row="1" Style="{StaticResource List}" ItemsSource="{Binding Items}" SelectedValue="{Binding Id}" >
-            <ListView.ItemContainerStyle>
+        
+        <ListView Grid.Row="1" Grid.Column="2" Style="{StaticResource List}" ItemsSource="{Binding Items}"  
+                  SelectedItem="{Binding Item}">
+            <ListView.ItemContainerStyle >
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Center"></Setter>
                 </Style>
-            </ListView.ItemContainerStyle>
+            </ListView.ItemContainerStyle >
             <ListView.View>
-                <GridView>
+                <GridView >
                     <GridViewColumn Header="Image" >
-                        <GridViewColumn.CellTemplate>
-                            <DataTemplate>
-                                <Image HorizontalAlignment="Center" Source="{Binding Small}">
-
+                        <GridViewColumn.CellTemplate >
+                            <DataTemplate >
+                                <Image HorizontalAlignment="Center" Source="{Binding Small}" >
                                 </Image>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
@@ -43,9 +48,7 @@
                     <GridViewColumn Header="Name" >
                         <GridViewColumn.CellTemplate>
                             <DataTemplate>
-                                <TextBlock  Padding="0 0 20 0" Text="{Binding Name}">
-                                    
-                                </TextBlock>
+                                <TextBlock Padding="0 0 20 0" Text="{Binding Name}"></TextBlock>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
@@ -73,5 +76,23 @@
                 </GridView>
             </ListView.View>
         </ListView>
+        <Border Grid.Row="1" CornerRadius="40" Width="95"  BorderBrush="Black" Background="#1D212C" Margin="14,0,14,0"  >
+            <StackPanel Orientation="Vertical">
+                <Image Source="/Resources/diamond.png" Width="32" Margin="0,22"/>
+                <Button Margin="0,10,0,0" Style="{StaticResource MenuButtonStyle}" Command="{Binding DetailedViewCommand}">
+                    <Image Source="/Resources/collage.png" Width="22"/>
+                </Button>
+                <Button Style="{StaticResource MenuButtonStyle}">
+                    <StackPanel>
+                        <Image Source="/Resources/convert.png" Width="22"/>
+                        <Ellipse Width="5" Height="5" Fill="White" Margin="3"/>
+                    </StackPanel>
+                </Button>
+                <Button Style="{StaticResource MenuButtonStyle}" Command="{Binding ProfileDetailedCommand}">
+                    <Image Source="/Resources/profile.png" Width="22"/>
+                </Button>
+
+            </StackPanel>
+        </Border>
     </Grid>
 </UserControl>

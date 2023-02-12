@@ -8,7 +8,7 @@ using Test_Task_WPF.Models;
 
 namespace Test_Task_WPF.ViewModels
 {
-    class ItemViewModel:ViewModelBase
+   public class ItemViewModel:ViewModelBase
     {
         private readonly Coin _coin;
 

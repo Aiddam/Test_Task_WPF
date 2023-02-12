@@ -7,9 +7,25 @@
         xmlns:views="clr-namespace:Test_Task_WPF.Views"
         xmlns:vms="clr-namespace:Test_Task_WPF.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid Margin="20 10" MaxWidth="600">
-        <Grid.Resources>
+        Title="MainWindow" Height="450" Width="800"  WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+    <Grid Margin="20 10" >
+
+        <ContentControl Content="{Binding CurrentViewModel}">
+            <ContentControl.Resources>
+                <DataTemplate DataType="{x:Type vms:CoinListingViewModel}">
+                    <views:CoinsListingView></views:CoinsListingView>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type vms:DetailViewModel}">
+                    <views:CoinView></views:CoinView>
+                </DataTemplate>
+
+                <DataTemplate DataType="{x:Type vms:CurrenciesViewModel}">
+                    <views:InterfaceMenu></views:InterfaceMenu>
+                </DataTemplate>
+            </ContentControl.Resources>
+        </ContentControl>
+        <!--<Grid.Resources>
             <DataTemplate DataType="{x:Type vms:CoinListingViewModel}">
                 <views:CoinsListingView></views:CoinsListingView>
             </DataTemplate>
@@ -18,7 +34,7 @@
             </DataTemplate>
         </Grid.Resources>
 
-        <ContentControl Content="{Binding CurrentViewModel}"></ContentControl>
+        <ContentControl Content="{Binding CurrentViewModel}"></ContentControl>-->
 
     </Grid>
 </Window>

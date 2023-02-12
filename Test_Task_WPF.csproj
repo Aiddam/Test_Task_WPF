@@ -8,8 +8,41 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\collage.png" />
+    <None Remove="Resources\convert.png" />
+    <None Remove="Resources\diamond.png" />
+    <None Remove="Resources\notif.png" />
+    <None Remove="Resources\profile.png" />
+    <None Remove="Resources\prop.png" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="System.Net.Http" Version="4.3.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Resources\collage.png" />
+    <Resource Include="Resources\convert.png" />
+    <Resource Include="Resources\diamond.png" />
+    <Resource Include="Resources\notif.png" />
+    <Resource Include="Resources\profile.png" />
+    <Resource Include="Resources\prop.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
 
 </Project>

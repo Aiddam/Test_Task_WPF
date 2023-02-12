@@ -9,7 +9,7 @@ using Test_Task_WPF.ViewModels;
 
 namespace Test_Task_WPF.Services
 {
-    class NavigationService
+    public class NavigationService
     {
         private readonly NavigationStore _navigationStore;
         private readonly Func<ViewModelBase> _createViewModel;

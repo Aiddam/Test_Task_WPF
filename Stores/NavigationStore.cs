@@ -7,7 +7,7 @@ using Test_Task_WPF.ViewModels;
 
 namespace Test_Task_WPF.Stores
 {
-   public class NavigationStore
+    public class NavigationStore
     {
         private ViewModelBase _currentViewModel;
         public ViewModelBase CurrentViewModel

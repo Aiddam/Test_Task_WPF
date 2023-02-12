@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -12,26 +13,31 @@ using Test_Task_WPF.Views;
 
 namespace Test_Task_WPF.ViewModels
 {
-    class CoinListingViewModel :ViewModelBase
+    public class CoinListingViewModel :ViewModelBase
     {
         private readonly IEnumerable<Coin> _coin;
-        private Item _item;
-        public Item Item
+        private ItemViewModel _item;
+        public ItemViewModel Item
         {
-            get { return _item; }
-            set { _item = value; OnPropertyChanged(nameof(Item));}
+            get {  return _item;  }
+            set {
+                StoreValueService.Item = value;
+                DetailedViewCommand.Execute(null);
+            }
         }
         private readonly ObservableCollection<ItemViewModel> _items;
         public ICommand DetailedViewCommand { get; }
+        public ICommand ProfileDetailedCommand { get; }
         public IEnumerable<ItemViewModel> Items => _items;
 
-        public CoinListingViewModel(IEnumerable<Coin> coin, NavigationService navigationService)
+        public CoinListingViewModel( ref IEnumerable<Coin> coin, NavigationService navigationService)
         {
             HttpRequestService httpRequestService = new HttpRequestService();
             coin = httpRequestService.GetTopCoins();
             _coin = coin;
             _items = new ObservableCollection<ItemViewModel>();
-            DetailedViewCommand = new NavigateCommand(_item,navigationService);
+            DetailedViewCommand = new NavigateCommand(navigationService);
+            ProfileDetailedCommand = new NavigateCommand(navigationService);
             UpdateCoins();
         }
 
