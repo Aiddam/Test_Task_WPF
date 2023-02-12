@@ -5,62 +5,56 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Test_Task_WPF.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
-    <Grid>
-        <Grid Grid.Column="1" Background="#FFE4E4E4"/>
-
-        <StackPanel  Background="White">
-            <Button Width="30" Height="30" Style="{StaticResource MenuButtonStyle}" HorizontalAlignment="Right" Margin="0 10 0 10" >
+             d:DesignHeight="450" d:DesignWidth="800" 
+             >
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <StackPanel Background="BlanchedAlmond" Grid.Row="0">
+            <Button  Command="{Binding NavigateToCoinListCommand}" Width="30" Height="30" Style="{StaticResource MenuButtonStyle}" HorizontalAlignment="Right" Margin="0 10 0 10" >
                 <Image  Source="/Resources/close.png"></Image>
             </Button>
+        </StackPanel>
 
+        <StackPanel Grid.Row="1" DataContext="{Binding User}" Background="BlanchedAlmond">
             <Border Width="100" Height="100" CornerRadius="80" BorderThickness="1" BorderBrush="Gray">
-                <Border.Background>
-                    <ImageBrush ImageSource="/Resources/diamond.png"/>
-                </Border.Background>
+                <Image Source="{Binding Image}"></Image>
             </Border>
+            <StackPanel >
+                <TextBlock Text="{Binding FullName}" HorizontalAlignment="Center" Margin="0 0 0 0"  Foreground="Gray" FontSize="18" FontWeight="Bold"/>
+                <TextBlock  Text="{Binding Role}" FontSize="14" Foreground="Gray" HorizontalAlignment="Center" Opacity="0.8"/>
+                <TextBlock Text="{Binding Description}" FontSize="12" Foreground="Gray" HorizontalAlignment="Center" Opacity="0.8"/>
 
-            <TextBlock Text="Aleksander Forster" HorizontalAlignment="Center" Margin="0 10 0 0" Foreground="Gray" FontSize="18" FontWeight="Bold"/>
-            <TextBlock Text="Game Designer" FontSize="13" Foreground="Gray" HorizontalAlignment="Center" Opacity="0.8"/>
-            <TextBlock Text="Shallow men believe in luck. Strong men believe in cause and effect." FontSize="8" Foreground="Gray" HorizontalAlignment="Center" Opacity="0.8"/>
-
-            <StackPanel Margin="20 10 20 10">
+            </StackPanel>
+           
+            <StackPanel Margin="20 10 20 10" >
                 <StackPanel Orientation="Horizontal" Margin="0 3">
-                    
-                    <TextBlock Text="Pavlograd, Ukraine" Margin="10 0" Foreground="Gray"/>
+
+                    <TextBlock  Text="{Binding Place}" Margin="10 0" Foreground="Gray"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 3">
 
-                    <TextBlock Text="(+38) 0667046256" Margin="10 0" Foreground="Gray"/>
+                    <TextBlock Text="{Binding Phone}" Margin="10 0" Foreground="Gray"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Margin="0 3">
 
-                    <TextBlock Text="aiddamaddominator@gmail.com" Margin="10 0" Foreground="Gray"/>
+                    <TextBlock Text="{Binding Email}" Margin="10 0" Foreground="Gray"/>
                 </StackPanel>
             </StackPanel>
 
             <TextBlock Text="Wallet" HorizontalAlignment="Center" Margin="20 0" Foreground="Gray"/>
             <StackPanel Orientation="Vertical" Margin="20 0">
                 <StackPanel Orientation="Horizontal"  Margin="5">
-                    <TextBlock  Text="On the account of money: "></TextBlock>
-                    <TextBlock  Text="500$"></TextBlock>
+                    <TextBlock Foreground="Gray"  Text="On the account of money: "></TextBlock>
+                    <TextBlock Foreground="Gray" Text="{Binding Money}"></TextBlock>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal"  Margin="5">
-                    <TextBlock  Text="Earned in one month: "></TextBlock>
-                    <TextBlock  Text="300$"></TextBlock>
+                    <TextBlock Foreground="Gray" Text="Earned in one month: "></TextBlock>
+                    <TextBlock Foreground="Gray" Text="300$"></TextBlock>
                 </StackPanel>
 
-
-                <Border Width="50" Height="50" CornerRadius="30" Margin="5">
-                    <Border.Background>
-                        <ImageBrush />
-                    </Border.Background>
-                </Border>
-                <Border Width="50" Height="50" CornerRadius="30" Margin="5">
-                    <Border.Background>
-                        <ImageBrush />
-                    </Border.Background>
-                </Border>
             </StackPanel>
         </StackPanel>
     </Grid>

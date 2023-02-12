@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using Test_Task_WPF.Enums;
 using Test_Task_WPF.Models;
 using Test_Task_WPF.Services;
 using Test_Task_WPF.Stores;
@@ -47,7 +48,11 @@ namespace Test_Task_WPF
         }
         private ProfileViewModel CreateProfileViewModel()
         {
-            return new ProfileViewModel(new NavigationService(_navigationStore, CreateCoinListingViewModel, CreateCurrenciesViewModel));
+            return new ProfileViewModel(new NavigationService(_navigationStore, CreateCoinListingViewModel, CreateCurrenciesViewModel),
+                new User("https://static.vecteezy.com/system/resources/thumbnails/009/665/304/small/cute-kitty-cat-head-cartoon-element-free-png.png",
+                "Anton","Sharlai","aiddamaddominator@gmail.com",
+                Role.Administrator, "Hard work is worthless for those that don't believe in themselves",
+                "Pavlograd","Ukraine","+(38) 0667046256",500));
         }
 
 
