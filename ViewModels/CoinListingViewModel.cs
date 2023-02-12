@@ -36,7 +36,7 @@ namespace Test_Task_WPF.ViewModels
             coin = httpRequestService.GetTopCoins();
             _coin = coin;
             _items = new ObservableCollection<ItemViewModel>();
-            DetailedViewCommand = new NavigateCommand(navigationService);
+            DetailedViewCommand = new NavigateToDetailCommand(navigationService);
             ProfileDetailedCommand = new NavigateCommand(navigationService);
             UpdateCoins();
         }

@@ -20,7 +20,7 @@ namespace Test_Task_WPF.Commands
         public override void Execute(object? parameter)
         {
 
-            _navigationService.Navigate();
+            _navigationService.NavigateToAnother();
         }
     }
 }

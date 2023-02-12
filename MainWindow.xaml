@@ -20,8 +20,8 @@
                     <views:CoinView></views:CoinView>
                 </DataTemplate>
 
-                <DataTemplate DataType="{x:Type vms:CurrenciesViewModel}">
-                    <views:InterfaceMenu></views:InterfaceMenu>
+                <DataTemplate DataType="{x:Type vms:ProfileViewModel}">
+                    <views:ProfileView></views:ProfileView>
                 </DataTemplate>
             </ContentControl.Resources>
         </ContentControl>

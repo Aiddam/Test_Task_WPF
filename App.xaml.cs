@@ -39,11 +39,15 @@ namespace Test_Task_WPF
 
         private DetailViewModel CreateCurrenciesViewModel()
         {
-            return new DetailViewModel(new NavigationService(_navigationStore, CreateCoinListingViewModel));
+            return new DetailViewModel(new NavigationService(_navigationStore, CreateCoinListingViewModel, CreateProfileViewModel));
         }
         private CoinListingViewModel CreateCoinListingViewModel()
         {
-            return new CoinListingViewModel( ref _coin, new NavigationService(_navigationStore, CreateCurrenciesViewModel));
+            return new CoinListingViewModel( ref _coin, new NavigationService(_navigationStore, CreateCurrenciesViewModel, CreateProfileViewModel));
+        }
+        private ProfileViewModel CreateProfileViewModel()
+        {
+            return new ProfileViewModel(new NavigationService(_navigationStore, CreateCoinListingViewModel, CreateCurrenciesViewModel));
         }
 
 

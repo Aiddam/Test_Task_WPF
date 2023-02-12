@@ -31,3 +31,5 @@ D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Test_Task_WPF.Properties.Resources.
 D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Test_Task_WPF.csproj.GenerateResource.cache
 D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Views\InterfaceMenu.g.cs
 D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Views\InterfaceMenu.baml
+D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Views\ProfileView.g.cs
+D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Views\ProfileView.baml

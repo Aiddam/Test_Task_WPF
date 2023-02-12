@@ -13,15 +13,21 @@ namespace Test_Task_WPF.Services
     {
         private readonly NavigationStore _navigationStore;
         private readonly Func<ViewModelBase> _createViewModel;
+        private readonly Func<ViewModelBase> _createAnotherViewModel;
 
-        public NavigationService(NavigationStore navigationStore, Func<ViewModelBase> createViewModel)
+        public NavigationService(NavigationStore navigationStore, Func<ViewModelBase> createViewModel, Func<ViewModelBase> createAnotherViewModel)
         {
             _navigationStore = navigationStore;
             _createViewModel = createViewModel;
+            _createAnotherViewModel = createAnotherViewModel;
         }
         public void Navigate()
         {
             _navigationStore.CurrentViewModel = _createViewModel();
+        }
+        public void NavigateToAnother()
+        {
+            _navigationStore.CurrentViewModel = _createAnotherViewModel();
         }
     }
 }
