@@ -63,6 +63,16 @@ namespace Test_Task_WPF.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Byte[].
         /// </summary>
+        internal static byte[] close {
+            get {
+                object obj = ResourceManager.GetObject("close", resourceCulture);
+                return ((byte[])(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Byte[].
+        /// </summary>
         internal static byte[] collage {
             get {
                 object obj = ResourceManager.GetObject("collage", resourceCulture);

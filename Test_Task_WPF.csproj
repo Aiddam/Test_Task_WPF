@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Resources\close.png" />
     <None Remove="Resources\collage.png" />
     <None Remove="Resources\convert.png" />
     <None Remove="Resources\diamond.png" />
@@ -22,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Resource Include="Resources\close.png" />
     <Resource Include="Resources\collage.png" />
     <Resource Include="Resources\convert.png" />
     <Resource Include="Resources\diamond.png" />

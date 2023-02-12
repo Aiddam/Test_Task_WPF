@@ -7,7 +7,7 @@
         xmlns:views="clr-namespace:Test_Task_WPF.Views"
         xmlns:vms="clr-namespace:Test_Task_WPF.ViewModels"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800"  WindowStartupLocation="CenterScreen" ResizeMode="NoResize" >
+        Title="MainWindow" Height="450" Width="800"  WindowStartupLocation="CenterScreen" ResizeMode="CanResizeWithGrip" >
     <Grid Margin="20 10" >
 
         <ContentControl Content="{Binding CurrentViewModel}">

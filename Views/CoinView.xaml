@@ -22,6 +22,7 @@
             <TextBlock DataContext="{Binding Item}" Text="{Binding Id}"></TextBlock>
             <TextBlock Text="Future Contnebt"></TextBlock>
         </StackPanel>
+        <Button Command="{Binding CoinListCommand}"></Button>
 
     </Grid>
 </UserControl>

@@ -43,7 +43,7 @@ namespace Test_Task_WPF
         }
         private CoinListingViewModel CreateCoinListingViewModel()
         {
-            return new CoinListingViewModel( ref _coin, new NavigationService(_navigationStore, CreateCurrenciesViewModel, CreateProfileViewModel));
+            return new CoinListingViewModel( _coin, new NavigationService(_navigationStore, CreateCurrenciesViewModel, CreateProfileViewModel));
         }
         private ProfileViewModel CreateProfileViewModel()
         {

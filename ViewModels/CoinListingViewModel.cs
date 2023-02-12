@@ -30,7 +30,7 @@ namespace Test_Task_WPF.ViewModels
         public ICommand ProfileDetailedCommand { get; }
         public IEnumerable<ItemViewModel> Items => _items;
 
-        public CoinListingViewModel( ref IEnumerable<Coin> coin, NavigationService navigationService)
+        public CoinListingViewModel( IEnumerable<Coin> coin, NavigationService navigationService)
         {
             HttpRequestService httpRequestService = new HttpRequestService();
             coin = httpRequestService.GetTopCoins();
