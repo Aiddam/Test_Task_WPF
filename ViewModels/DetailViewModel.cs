@@ -13,17 +13,17 @@ namespace Test_Task_WPF.ViewModels
 {
    public class DetailViewModel:ViewModelBase
     {
-        private ItemViewModel _item;
-        public  ItemViewModel Item
+        public ICommand NavigateToCoinListCommand { get; }
+        private FullCoin _fullCoin;
+        public  FullCoin FullCoin
         {
-            get {  return _item;  }
-            set { _item = value; OnPropertyChanged("Item"); }
+            get {  return _fullCoin;  }
+            set { _fullCoin = value; OnPropertyChanged("FullCoin"); }
         }
-        public ICommand CoinListCommand { get; }
         public DetailViewModel(NavigationService navigationService)
         {
-            Item = StoreValueService.Item;
-            CoinListCommand = new NavigateToDetailCommand(navigationService);
+            _fullCoin = StoreValueService.FullCoin;
+            NavigateToCoinListCommand = new NavigateToDetailCommand(navigationService);
         }
     }
 }

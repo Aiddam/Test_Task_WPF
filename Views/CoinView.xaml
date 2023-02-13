@@ -7,22 +7,49 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition ></ColumnDefinition>
-            <ColumnDefinition ></ColumnDefinition>
-            <ColumnDefinition ></ColumnDefinition>
-        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
+            <RowDefinition Height="auto"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
         </Grid.RowDefinitions>
-
-        <StackPanel Grid.Column="1" HorizontalAlignment="Left" >
-            <TextBlock DataContext="{Binding Item}" Text="{Binding Id}"></TextBlock>
-            <TextBlock Text="Future Contnebt"></TextBlock>
+        
+        <StackPanel Background="BlanchedAlmond" Grid.Row="0">
+            <Button  Command="{Binding NavigateToCoinListCommand}" Width="30" Height="30" Style="{StaticResource MenuButtonStyle}" HorizontalAlignment="Right" Margin="0 0 0 0" >
+                <Image  Source="/Resources/close.png"></Image>
+            </Button>
         </StackPanel>
-        <Button Command="{Binding CoinListCommand}"></Button>
+        
+        <StackPanel Grid.Row="1" DataContext="{Binding FullCoin}" Background="BlanchedAlmond">
+            <Border Width="80" Height="80" CornerRadius="80" BorderThickness="1" BorderBrush="Gray">
+                <Image Source="{Binding Image_Small}"></Image>
+            </Border>
+            <StackPanel >
+                <TextBlock  Text="{Binding Name}" HorizontalAlignment="Center" Margin="0 0 0 0"  Foreground="Gray" FontSize="18" FontWeight="Bold"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <TextBlock  Text="Market Cap Rank: " FontSize="14" Foreground="Gray" HorizontalAlignment="Center" Opacity="0.8"/>
+                    <TextBlock  Text="{Binding Market_Cap_Rank}" FontSize="14" Foreground="Gray" HorizontalAlignment="Center" Opacity="0.8"/>
+                </StackPanel>
+            </StackPanel>
 
+            <StackPanel Margin="20 10 20 10" >
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock  Text="Description:  " FontSize="14" Foreground="Gray" HorizontalAlignment="Center" Opacity="0.8"/>
+                    <TextBlock TextWrapping="Wrap" Width="700" Text="{Binding Description.en}" FontSize="12" Foreground="Gray" HorizontalAlignment="Center" Opacity="0.8"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Margin="0 3">
+                    <TextBlock  Text="Coingecko Rank: " FontSize="14" Foreground="Gray" HorizontalAlignment="Center" Opacity="0.8"/>
+                    <TextBlock  Text="{Binding CoingeckoRank}" FontSize="14" Foreground="Gray" HorizontalAlignment="Center" Opacity="0.8"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 3">
+                    <TextBlock  Text="Coingecko Score: " FontSize="14" Foreground="Gray" HorizontalAlignment="Center" Opacity="0.8"/>
+                    <TextBlock  Text="{Binding CoingeckoScore}" FontSize="14" Foreground="Gray" HorizontalAlignment="Center" Opacity="0.8"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0 3">
+                    <TextBlock FontSize="14" Foreground="Gray" Text="Link: "></TextBlock>
+                    <TextBox Margin="0 3 0 0" Foreground="Gray" BorderThickness="0" IsReadOnly="True"  Background="Transparent" Text="{Binding Link.HomePage[0]}">
+                    </TextBox>
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
     </Grid>
 </UserControl>

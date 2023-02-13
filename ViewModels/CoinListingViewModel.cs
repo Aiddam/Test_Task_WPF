@@ -22,19 +22,20 @@ namespace Test_Task_WPF.ViewModels
             get {  return _item;  }
             set {
                 StoreValueService.Item = value;
-                DetailedViewCommand.Execute(null);
+                httpRequestService.GetFullInformationCoin(value);
+                DetailedViewCommand.Execute(0);
             }
         }
         private readonly ObservableCollection<ItemViewModel> _items;
         public ICommand DetailedViewCommand { get; }
         public ICommand ProfileDetailedCommand { get; }
         public IEnumerable<ItemViewModel> Items => _items;
+        public HttpRequestService httpRequestService = new HttpRequestService();
 
         public CoinListingViewModel( IEnumerable<Coin> coin, NavigationService navigationService)
         {
-            HttpRequestService httpRequestService = new HttpRequestService();
-            coin = httpRequestService.GetTopCoins();
-            _coin = coin;
+             httpRequestService.GetTopCoins();
+            _coin = StoreValueService.Coins;
             _items = new ObservableCollection<ItemViewModel>();
             DetailedViewCommand = new NavigateToDetailCommand(navigationService);
             ProfileDetailedCommand = new NavigateCommand(navigationService);
