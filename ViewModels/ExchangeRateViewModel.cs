@@ -15,7 +15,6 @@ namespace Test_Task_WPF.ViewModels
 {
     public class ExchangeRateViewModel:ViewModelBase
     {
-        public ICommand NavigateToCoinListCommand { get; }
         private decimal _value1;
         public decimal Value1
         {
@@ -37,11 +36,9 @@ namespace Test_Task_WPF.ViewModels
             }
         }
 
-
-
-
         private readonly ObservableCollection<ItemViewModel> _items;
         public IEnumerable<ItemViewModel> Items => _items;
+
         private ItemViewModel _item1;
         public ItemViewModel Item1
         {
@@ -63,6 +60,8 @@ namespace Test_Task_WPF.ViewModels
                 Value2 = Value1;
             }
         }
+
+        public ICommand NavigateToCoinListCommand { get; }
 
         public ExchangeRateViewModel(NavigationService navigationService)
         {

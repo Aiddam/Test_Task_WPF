@@ -38,14 +38,14 @@ namespace Test_Task_WPF
             base.OnStartup(e);
         }
 
-        private DetailViewModel CreateCurrenciesViewModel()
+        private DetailViewModel CreateDetailViewModel()
         {
             return new DetailViewModel(new NavigationService(_navigationStore, CreateCoinListingViewModel,
                 CreateProfileViewModel, CreateExchangeRateViewModel));
         }
         private CoinListingViewModel CreateCoinListingViewModel()
         {
-            return new CoinListingViewModel( _coin, new NavigationService(_navigationStore, CreateCurrenciesViewModel,
+            return new CoinListingViewModel( _coin, new NavigationService(_navigationStore, CreateDetailViewModel,
                 CreateProfileViewModel, CreateExchangeRateViewModel));
         }
         private ProfileViewModel CreateProfileViewModel()
@@ -59,12 +59,12 @@ namespace Test_Task_WPF
             }
 
             return new ProfileViewModel(StoreValueService.User, new NavigationService(_navigationStore,
-                CreateCoinListingViewModel, CreateCurrenciesViewModel, CreateExchangeRateViewModel));
+                CreateCoinListingViewModel, CreateDetailViewModel, CreateExchangeRateViewModel));
         }
         private ExchangeRateViewModel CreateExchangeRateViewModel()
         {
             return new ExchangeRateViewModel( new NavigationService(_navigationStore, CreateCoinListingViewModel,
-                CreateProfileViewModel, CreateCurrenciesViewModel));
+                CreateProfileViewModel, CreateDetailViewModel));
         }
 
 

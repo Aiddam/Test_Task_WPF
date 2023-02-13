@@ -13,13 +13,14 @@ namespace Test_Task_WPF.ViewModels
 {
    public class DetailViewModel:ViewModelBase
     {
-        public ICommand NavigateToCoinListCommand { get; }
         private FullCoin _fullCoin;
         public  FullCoin FullCoin
         {
             get {  return _fullCoin;  }
             set { _fullCoin = value; OnPropertyChanged("FullCoin"); }
         }
+
+        public ICommand NavigateToCoinListCommand { get; }
         public DetailViewModel(NavigationService navigationService)
         {
             _fullCoin = StoreValueService.FullCoin;

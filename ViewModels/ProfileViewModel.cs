@@ -12,13 +12,15 @@ namespace Test_Task_WPF.ViewModels
 {
     public class ProfileViewModel:ViewModelBase
     {
-        public ICommand NavigateToCoinListCommand { get; }
         private  User _user;
         public User User
         {
             get { return _user; }
             set { _user = value;}
         }
+
+        public ICommand NavigateToCoinListCommand { get; }
+
         public ProfileViewModel(User user, NavigationService navigationService)
         {
             User = user;

@@ -18,7 +18,7 @@ namespace Test_Task_WPF.Services
     {
         private HttpClient _httpClient => new HttpClient();
 
-        public  void GetTopCoins()
+        public void GetTopCoins()
         {
             if (StoreValueService.Coins != null)
                 return;
