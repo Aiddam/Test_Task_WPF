@@ -10,7 +10,8 @@ namespace Test_Task_WPF.Services
 {
     public static class StoreValueService
     {
-        public static ItemViewModel Item { get; set; }
+        public static ItemViewModel Item;
         public static IEnumerable<Coin> Coins;
+        public static User User;
     }
 }
