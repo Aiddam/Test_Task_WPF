@@ -18,13 +18,16 @@ namespace Test_Task_WPF.Services
 
         public IEnumerable<Coin> GetTopCoins()
         {
+            if (StoreValueService.Coins != null)
+                return StoreValueService.Coins;
             _request = "https://api.coingecko.com/api/v3/search/trending";
             HttpResponseMessage response = (_httpClient.GetAsync(_request)).Result;
+
             string responseBody = response.Content.ReadAsStringAsync().Result;
             JObject jObject = JObject.Parse(responseBody);
             JToken list = jObject["coins"];
-            var Coins = list.ToObject<IEnumerable<Coin>>();
-            return Coins;
+            StoreValueService.Coins = list.ToObject<IEnumerable<Coin>>();
+            return StoreValueService.Coins;
         }
     }
 }

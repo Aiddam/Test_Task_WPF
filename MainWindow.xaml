@@ -13,7 +13,7 @@
         <ContentControl Content="{Binding CurrentViewModel}">
             <ContentControl.Resources>
                 <DataTemplate DataType="{x:Type vms:CoinListingViewModel}">
-                    <views:CoinsListingView></views:CoinsListingView>
+                    <views:CoinsListingView ></views:CoinsListingView>
                 </DataTemplate>
 
                 <DataTemplate DataType="{x:Type vms:DetailViewModel}">
@@ -21,20 +21,11 @@
                 </DataTemplate>
 
                 <DataTemplate DataType="{x:Type vms:ProfileViewModel}">
-                    <views:ProfileView Background="DarkBlue"></views:ProfileView>
+                    <views:ProfileView ></views:ProfileView>
                 </DataTemplate>
             </ContentControl.Resources>
         </ContentControl>
-        <!--<Grid.Resources>
-            <DataTemplate DataType="{x:Type vms:CoinListingViewModel}">
-                <views:CoinsListingView></views:CoinsListingView>
-            </DataTemplate>
-            <DataTemplate DataType="{x:Type vms:DetailViewModel}">
-                <views:CoinView></views:CoinView>
-            </DataTemplate>
-        </Grid.Resources>
-
-        <ContentControl Content="{Binding CurrentViewModel}"></ContentControl>-->
+       
 
     </Grid>
 </Window>
