@@ -40,24 +40,31 @@ namespace Test_Task_WPF
 
         private DetailViewModel CreateCurrenciesViewModel()
         {
-            return new DetailViewModel(new NavigationService(_navigationStore, CreateCoinListingViewModel, CreateProfileViewModel));
+            return new DetailViewModel(new NavigationService(_navigationStore, CreateCoinListingViewModel,
+                CreateProfileViewModel, CreateExchangeRateViewModel));
         }
         private CoinListingViewModel CreateCoinListingViewModel()
         {
-            return new CoinListingViewModel( _coin, new NavigationService(_navigationStore, CreateCurrenciesViewModel, CreateProfileViewModel));
+            return new CoinListingViewModel( _coin, new NavigationService(_navigationStore, CreateCurrenciesViewModel,
+                CreateProfileViewModel, CreateExchangeRateViewModel));
         }
         private ProfileViewModel CreateProfileViewModel()
         {
             if(StoreValueService.User == null)
             {
                 StoreValueService.User = new User("https://static.vecteezy.com/system/resources/thumbnails/009/665/304/small/cute-kitty-cat-head-cartoon-element-free-png.png",
-                "Anton", "Sharlai", "aiddamaddominator@gmail.com",
-                Role.Administrator, "Hard work is worthless for those that don't believe in themselves",
-                "Pavlograd", "Ukraine", "+(38) 0667046256", 500);
+                    "Anton", "Sharlai", "aiddamaddominator@gmail.com", Role.Administrator,
+                    "Hard work is worthless for those that don't believe in themselves", "Pavlograd", "Ukraine",
+                    "+(38) 0667046256", 500);
             }
 
-            return new ProfileViewModel(new NavigationService(_navigationStore, CreateCoinListingViewModel, CreateCurrenciesViewModel),
-                StoreValueService.User);
+            return new ProfileViewModel(StoreValueService.User, new NavigationService(_navigationStore,
+                CreateCoinListingViewModel, CreateCurrenciesViewModel, CreateExchangeRateViewModel));
+        }
+        private ExchangeRateViewModel CreateExchangeRateViewModel()
+        {
+            return new ExchangeRateViewModel( new NavigationService(_navigationStore, CreateCoinListingViewModel,
+                CreateProfileViewModel, CreateCurrenciesViewModel));
         }
 
 

@@ -19,7 +19,7 @@ namespace Test_Task_WPF.ViewModels
             get { return _user; }
             set { _user = value;}
         }
-        public ProfileViewModel(NavigationService navigationService,User user)
+        public ProfileViewModel(User user, NavigationService navigationService)
         {
             User = user;
             NavigateToCoinListCommand = new NavigateToDetailCommand(navigationService);

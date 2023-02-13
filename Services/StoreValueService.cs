@@ -14,5 +14,6 @@ namespace Test_Task_WPF.Services
         public static IEnumerable<Coin>? Coins;
         public static User? User;
         public static FullCoin? FullCoin;
+        
     }
 }

@@ -33,3 +33,5 @@ D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Views\InterfaceMenu.g.cs
 D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Views\InterfaceMenu.baml
 D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Views\ProfileView.g.cs
 D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Views\ProfileView.baml
+D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Views\ExchangeRateView.g.cs
+D:\c#\Test_Task_WPF\obj\Debug\net6.0-windows\Views\ExchangeRateView.baml

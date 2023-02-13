@@ -71,9 +71,9 @@ namespace Test_Task_WPF.Models
             get { return _slug ?? "Unknown"; }
             set { _slug = value;  }
         }
-        private double _price_Btc { get; set; }
+        private decimal _price_Btc { get; set; }
         [JsonPropertyName("price_btc")]
-        public double Price_Btc
+        public decimal Price_Btc
         {
             get { return _price_Btc; }
             set { _price_Btc = value;  }

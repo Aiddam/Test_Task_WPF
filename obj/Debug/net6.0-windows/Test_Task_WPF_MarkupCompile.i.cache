@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 D:\c#\Test_Task_WPF\App.xaml
-5-581038698
+6-1831113754
 
-321975653136
+35245161971
 195-1001498343
-MainWindow.xaml;Views\CoinsListingView.xaml;Views\CoinView.xaml;Views\InterfaceMenu.xaml;Views\ProfileView.xaml;
+MainWindow.xaml;Views\CoinsListingView.xaml;Views\CoinView.xaml;Views\ExchangeRateView.xaml;Views\InterfaceMenu.xaml;Views\ProfileView.xaml;
 
 True
 

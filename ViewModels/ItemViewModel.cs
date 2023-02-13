@@ -24,7 +24,7 @@ namespace Test_Task_WPF.ViewModels
 
 
         public string Slug=> _coin.Item.Slug;
-        public double Price_Btc => _coin.Item.Price_Btc;
+        public decimal Price_Btc => _coin.Item.Price_Btc;
         public int Score => _coin.Item.Score;
 
 

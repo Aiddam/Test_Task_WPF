@@ -29,6 +29,7 @@ namespace Test_Task_WPF.ViewModels
         private readonly ObservableCollection<ItemViewModel> _items;
         public ICommand DetailedViewCommand { get; }
         public ICommand ProfileDetailedCommand { get; }
+        public ICommand ExchangeRateCommand { get; }
         public IEnumerable<ItemViewModel> Items => _items;
         public HttpRequestService httpRequestService = new HttpRequestService();
 
@@ -39,6 +40,8 @@ namespace Test_Task_WPF.ViewModels
             _items = new ObservableCollection<ItemViewModel>();
             DetailedViewCommand = new NavigateToDetailCommand(navigationService);
             ProfileDetailedCommand = new NavigateCommand(navigationService);
+            ExchangeRateCommand = new NavigateToExchangeRateCommand(navigationService);
+
             UpdateCoins();
         }
 
