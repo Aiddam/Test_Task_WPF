@@ -81,13 +81,11 @@
                 <Button Margin="0,10,0,0" Style="{StaticResource MenuButtonStyle}" Command="{Binding ExchangeRateCommand}">
                     <Image Source="/Resources/collage.png" Width="22"/>
                 </Button>
-                <Button Style="{StaticResource MenuButtonStyle}">
-                    <StackPanel >
-                        <Button Margin="0,10,0,0" Style="{StaticResource MenuButtonStyle}" Command="{Binding ExchangeRateCommand}">
-                            <Image Source="/Resources/convert.png" Width="22"/>
-                        </Button>
+                <Button Style="{StaticResource MenuButtonStyle}" Command="{Binding ExchangeRateCommand}">
 
-                    </StackPanel>
+
+                    <Image Source="/Resources/convert.png" Width="22"/>
+
                 </Button>
                 <Button Style="{StaticResource MenuButtonStyle}" Command="{Binding ProfileDetailedCommand}">
                     <Image Source="/Resources/profile.png" Width="22"/>
